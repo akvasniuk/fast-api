@@ -2,5 +2,6 @@ fastapi==0.47.1
 uvicorn==0.11.2
 h11==0.9.0
 tensorflow
-gunicorn==20.0.4
+gunicorn
 httptools
+uvicorn>=0.15.0,<0.16.0
