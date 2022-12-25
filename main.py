@@ -18,8 +18,7 @@ def root():
 
 @app.post("/predict")
 async def predict(file: UploadFile=File(...)):
-    file = await file.read()
-    img = load_img(BytesIO(file), target_size=(150, 150))
+    img = load_img(BytesIO(await file.read()), target_size=(150, 150))
 
     x = img_to_array(img)
     x = np.expand_dims(x, axis=0)
